@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+  
+  <style>
+  
+
+.required::after {
+    content: " *";
+    color: red;
+}
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > input:checked ~ label:hover ~ label,
+.rate > input:checked ~ label:hover ~ label {
+    color: #c59b08;
+}
+  #customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  #customers tr:nth-child(even){background-color: #c7c1c1;}
+  #customers tr:hover {background-color: #ddd;}
+ #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    color: rgb(24, 21, 21);
+  }
+  </style>
+  <body>
+    <label class="required" style="font-size: larger; ">Name</label><br>
+    <input type="text" placeholder="Your First name..." >
+    <input type="text" placeholder="Your last name..."><br>
+    <label class="required" style="font-size: larger;">Email</label><br>
+    <input type="text"><br><br>
+    <table >
+      <tr>
+        <td style="column-width: auto;">
+      <label class="required" style="font-size: larger;">Your experience</label><br>
+    </td>
+    <td style="column-width: auto;">
+      <div class="rate">
+        <input type="radio" id="star5" name="rate" value="5" />
+        <label for="star5" title="text">5 stars</label>
+        <input type="radio" id="star4" name="rate" value="4" />
+        <label for="star4" title="text">4 stars</label>
+        <input type="radio" id="star3" name="rate" value="3" />
+        <label for="star3" title="text">3 stars</label>
+        <input type="radio" id="star2" name="rate" value="2" />
+        <label for="star2" title="text">2 stars</label>
+        <input type="radio" id="star1" name="rate" value="1" />
+        <label for="star1" title="text">1 star</label>
+      </div>  
+    </td>
+    </tr>
+    </table>
+    
+ 
+  <table id="customers" style="table-layout: auto;"><br>
+    
+    <label class="required" style="font-size: larger;">How satisfied are you with</label>
+    <tr>
+      <th></th>
+      <th>very satisfied</th>
+      <th>Satisfied</th>
+      <th>Neutral</th>
+      <th>Unsatisfied</th>
+    </tr>
+    <tr>
+      <td>Purchase</td>
+     <td> <input type="radio"></td>
+      <td><input type="radio"></td>
+      <td><input type="radio"></td>
+      <td><input type="radio"></td>
+    </tr>
+    <tr>
+      <td>Services</td>
+      <td> <input type="radio"></td>
+      <td><input type="radio"></td>
+      <td><input type="radio"></td>
+      <td><input type="radio"></td>
+    </tr>
+    <tr>
+      <td>Company Overall</td>
+      <td> <input type="radio"></td>
+      <td><input type="radio"></td>
+      <td><input type="radio"></td>
+      <td><input type="radio"></td> 
+       </td>
+
+    </tr>
+    <br>
+    <br>
+  <br>
+  
+  <table id="customers"><br>
+    <label class="required" style="font-size: larger;">How likely are you to</label>
+    <tr>
+      <th></th>
+      <th>very Unlikely</th>
+      <th>Unlikely</th>
+      <th>Neutral</th>
+      <th>likely</th>
+    </tr>
+    <tr>
+      <td>Buy again</td>
+     <td> <input type="radio"></td>
+      <td><input type="radio"></td>
+      <td><input type="radio"></td>
+      <td><input type="radio"></td>
+    </tr>
+    <tr>
+      <td>Recommendproduct
+      </td>
+      <td> <input type="radio"></td>
+      <td><input type="radio"></td>
+      <td><input type="radio"></td>
+      <td><input type="radio"></td>
+    </tr>
+    <tr>
+      <td>Recommendcompany
+      </td>
+      <td> <input type="radio"></td>
+      <td><input type="radio"></td>
+      <td><input type="radio"></td>
+      <td><input type="radio"></td>
+       </td>
+
+    </tr>
+  </table>
+  <br>
+  
+    <label>Suggestions</label><br>
+    <input type="text" style="height: 200px;" style="width: 400px;"><br>
+    <br>
+    <button>Submit</button><br>
+</body>
+</html>
